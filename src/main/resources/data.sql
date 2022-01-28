@@ -1,13 +1,7 @@
-create table if not exists hibernate_sequence
-(
-    next_val bigint null
-);
-
-
 create table  if not exists stock
 (
     id            int            not null
-        primary key,
+        AUTO_INCREMENT primary key,
     current_price decimal(19, 2) null,
     deleted       bit            not null,
     last_update   datetime(6)    not null,
@@ -24,4 +18,3 @@ INSERT INTO stock (id, current_price, deleted, last_update, name) VALUES (7, 454
 INSERT INTO stock (id, current_price, deleted, last_update, name) VALUES (8, 852.00, false, '2022-01-27 10:04:26', 'iphone');
 INSERT INTO stock (id, current_price, deleted, last_update, name) VALUES (9, 9666.00, false, '2022-01-27 10:04:26', 'pixel');
 INSERT INTO stock (id, current_price, deleted, last_update, name) VALUES (10, 12154.00, false, '2022-01-27 10:04:26', 'iphone14');
-INSERT INTO hibernate_sequence (next_val) VALUES (11);

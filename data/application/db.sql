@@ -1,10 +1,5 @@
 CREATE DATABASE IF NOT EXISTS stock_market;
 USE stock_market;
-create table if not exists hibernate_sequence
-(
-    next_val bigint null
-);
-
 
 create table  if not exists stock
 (
@@ -26,4 +21,3 @@ INSERT INTO stock_market.stock (id, current_price, deleted, last_update, name) V
 INSERT INTO stock_market.stock (id, current_price, deleted, last_update, name) VALUES (8, 852.00, false, '2022-01-27 10:04:26', 'iphone');
 INSERT INTO stock_market.stock (id, current_price, deleted, last_update, name) VALUES (9, 9666.00, false, '2022-01-27 10:04:26', 'pixel');
 INSERT INTO stock_market.stock (id, current_price, deleted, last_update, name) VALUES (10, 12154.00, false, '2022-01-27 10:04:26', 'iphone14');
-INSERT INTO stock_market.hibernate_sequence (next_val) VALUES (11);

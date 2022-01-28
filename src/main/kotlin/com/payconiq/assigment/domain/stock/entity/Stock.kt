@@ -7,7 +7,7 @@ import javax.persistence.*
 @Entity
 data class Stock(
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
     val id:Int=0,
     val name: String?=null,
     val currentPrice: BigDecimal?=null,

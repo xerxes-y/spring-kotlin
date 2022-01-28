@@ -2,6 +2,7 @@ package com.payconiq.assigment
 
 
 import com.payconiq.assigment.domain.stock.entity.Stock
+import com.payconiq.assigment.domain.stock.repository.StockRepository
 import com.payconiq.assigment.domain.stock.vo.StockVo
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -27,7 +28,8 @@ import kotlin.test.assertNotNull
 class AssigmentApplicationTests {
     @Autowired
     lateinit var restTemplate: TestRestTemplate
-
+    @Autowired
+    lateinit var repo: StockRepository
     @Test
     fun getListOfStocks() {
         val result = restTemplate.getForEntity("/api/stocks", List::class.java);
@@ -53,12 +55,13 @@ class AssigmentApplicationTests {
             "/api/stocks/1?_method=patch",
             StockVo(name="mackBookPro", currentPrice = BigDecimal(121212)),
             String()::class.java);
-        assertNotNull(result)
+
+        assertEquals(repo.findById(1).get().currentPrice,BigDecimal(121212))
     }
 
     @Test
     fun createOneStock() {
-        val result = restTemplate.postForEntity("/api/stocks/1",StockVo(name="mackBookPro", currentPrice = BigDecimal(121212)), String()::class.java);
-        assertNotNull(result)
+        val result = restTemplate.postForEntity("/api/stocks",StockVo(name="mackBookPro", currentPrice = BigDecimal(121212)), String()::class.java);
+        assertNotNull(repo.findByName("mackBookPro"))
     }
 }

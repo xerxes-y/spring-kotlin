@@ -8,5 +8,6 @@ import java.util.*
 interface StockRepository : CrudRepository<Stock,Int> {
     fun findAllByDeletedIsFalse(pageable: Pageable): Optional<List<Stock>>
     fun findByIdAndDeletedIsFalse(id:Int) : Optional<Stock>
+    fun findByName(name: String): Optional<Stock>
 
 }
