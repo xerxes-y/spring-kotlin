@@ -9,12 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.web.client.TestRestTemplate
-import org.springframework.http.HttpMethod
 import org.springframework.http.HttpStatus
-import org.springframework.http.client.HttpComponentsClientHttpRequestFactory
 import org.springframework.test.context.ActiveProfiles
 import java.math.BigDecimal
-import java.net.URI
 import kotlin.test.assertEquals
 import kotlin.test.assertNotNull
 
@@ -51,12 +48,12 @@ class AssigmentApplicationTests {
 
     @Test
     fun updateOneStock() {
-        val result = restTemplate.postForEntity(
+        val result = restTemplate.patchForObject(
             "/api/stocks/1?_method=patch",
             StockVo(name="mackBookPro", currentPrice = BigDecimal(121212)),
             String()::class.java);
 
-        assertEquals(repo.findById(1).get().currentPrice,BigDecimal(121212))
+        assertEquals(repo.findById(1).get().currentPrice,BigDecimal("121212.00"))
     }
 
     @Test
