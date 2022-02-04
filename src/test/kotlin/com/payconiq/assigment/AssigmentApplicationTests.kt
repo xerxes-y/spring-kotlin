@@ -49,7 +49,7 @@ class AssigmentApplicationTests {
     @Test
     fun updateOneStock() {
         val result = restTemplate.patchForObject(
-            "/api/stocks/1?_method=patch",
+            "/api/stocks/1",
             StockVo(name="mackBookPro", currentPrice = BigDecimal(121212)),
             String()::class.java);
 
