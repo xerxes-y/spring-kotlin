@@ -1,7 +1,7 @@
-package com.payconiq.assigment.infrastructre.rest
+package com.smaple.kotlin.assigment.infrastructre.rest
 
-import com.payconiq.assigment.domain.stock.vo.StockVo
-import com.payconiq.assigment.infrastructre.service.StockService
+import com.smaple.kotlin.assigment.domain.stock.vo.StockVo
+import com.smaple.kotlin.assigment.infrastructre.service.StockService
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

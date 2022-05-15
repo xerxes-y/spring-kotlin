@@ -1,4 +1,4 @@
-package com.payconiq.assigment.domain.stock.entity
+package com.smaple.kotlin.assigment.domain.stock.entity
 
 import java.math.BigDecimal
 import java.time.LocalDateTime

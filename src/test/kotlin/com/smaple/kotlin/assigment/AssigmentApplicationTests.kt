@@ -1,9 +1,9 @@
-package com.payconiq.assigment
+package com.smaple.kotlin.assigment
 
 
-import com.payconiq.assigment.domain.stock.entity.Stock
-import com.payconiq.assigment.domain.stock.repository.StockRepository
-import com.payconiq.assigment.domain.stock.vo.StockVo
+import com.smaple.kotlin.assigment.domain.stock.entity.Stock
+import com.smaple.kotlin.assigment.domain.stock.repository.StockRepository
+import com.smaple.kotlin.assigment.domain.stock.vo.StockVo
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc
@@ -58,7 +58,7 @@ class AssigmentApplicationTests {
 
     @Test
     fun createOneStock() {
-        val result = restTemplate.postForEntity("/api/stocks",StockVo(name="mackBookPro", currentPrice = BigDecimal(121212)), String()::class.java);
+        val result = restTemplate.postForEntity("/api/stocks", StockVo(name="mackBookPro", currentPrice = BigDecimal(121212)), String()::class.java);
         assertNotNull(repo.findByName("mackBookPro"))
     }
 }

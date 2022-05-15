@@ -1,4 +1,4 @@
-package com.payconiq.assigment
+package com.smaple.kotlin.assigment
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

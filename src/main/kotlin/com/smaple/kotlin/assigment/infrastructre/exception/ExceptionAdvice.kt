@@ -1,6 +1,6 @@
-package com.payconiq.assigment.infrastructre.exception
+package com.smaple.kotlin.assigment.infrastructre.exception
 
-import com.payconiq.assigment.domain.stock.exception.StockNotFoundException
+import com.smaple.kotlin.assigment.domain.stock.exception.StockNotFoundException
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.ControllerAdvice
@@ -12,7 +12,7 @@ import java.util.*
 @ControllerAdvice
 class ControllerAdviceRequestError : ResponseEntityExceptionHandler() {
     @ExceptionHandler(value = [(StockNotFoundException::class)])
-    fun handleUserAlreadyExists(ex: StockNotFoundException,request: WebRequest): ResponseEntity<ErrorsDetails> {
+    fun handleUserAlreadyExists(ex: StockNotFoundException, request: WebRequest): ResponseEntity<ErrorsDetails> {
         val errorDetails = ErrorsDetails(
             Date(),
             "Validation Failed",

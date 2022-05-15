@@ -1,4 +1,4 @@
-package com.payconiq.assigment.infrastructre.exception
+package com.smaple.kotlin.assigment.infrastructre.exception
 
 import java.util.*
 

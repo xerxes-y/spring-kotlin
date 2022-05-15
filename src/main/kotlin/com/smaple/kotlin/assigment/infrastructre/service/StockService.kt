@@ -1,10 +1,10 @@
-package com.payconiq.assigment.infrastructre.service
+package com.smaple.kotlin.assigment.infrastructre.service
 
-import com.payconiq.assigment.application.stock.controller.StockServices
-import com.payconiq.assigment.domain.stock.entity.Stock
-import com.payconiq.assigment.domain.stock.exception.StockNotFoundException
-import com.payconiq.assigment.domain.stock.repository.StockRepository
-import com.payconiq.assigment.domain.stock.vo.StockVo
+import com.smaple.kotlin.assigment.application.stock.controller.StockServices
+import com.smaple.kotlin.assigment.domain.stock.entity.Stock
+import com.smaple.kotlin.assigment.domain.stock.exception.StockNotFoundException
+import com.smaple.kotlin.assigment.domain.stock.repository.StockRepository
+import com.smaple.kotlin.assigment.domain.stock.vo.StockVo
 import org.springframework.data.domain.PageRequest
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
